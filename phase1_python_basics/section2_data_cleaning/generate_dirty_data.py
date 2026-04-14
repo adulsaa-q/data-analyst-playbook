@@ -11,7 +11,7 @@ start_date = datetime(2024, 1, 1)
 
 data = []
 
-# build 9,980 rows first
+# build 3000 rows first
 for i in range(1, 3000):
     product = random.choice(products)
     qty = random.choice([1, 2, 3, 4, 5, None])  # มี null
