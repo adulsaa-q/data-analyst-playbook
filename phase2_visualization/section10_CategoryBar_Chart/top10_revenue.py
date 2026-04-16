@@ -49,9 +49,5 @@ ax.set_title("Top 10 Products by Revenue")
 
 # adjust layout to prevent overlap
 plt.tight_layout()
-
-# save chart as image file
 plt.savefig("charts/top_products.png", dpi=150)
-
-# show plot
 plt.show()
