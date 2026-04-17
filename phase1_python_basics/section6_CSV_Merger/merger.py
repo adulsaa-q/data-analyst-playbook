@@ -4,6 +4,7 @@ import pandas as pd
     # CONFIG
 INPUT_PATTERN = "data/orders_???.csv"
 OUTPUT_PATH = "data/orders_all.csv"
+
     # FUNCTIONS
 def validate_columns(files: list) -> bool:
     """Check that all files have identical columns.

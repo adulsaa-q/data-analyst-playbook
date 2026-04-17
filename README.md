@@ -25,13 +25,13 @@
 | 9 | Revenue Trend Line Chart | 🟢 Easy | ✅ Done |
 | 10 | Category Bar Chart | 🟢 Easy | ✅ Done |
 | 11 | Sales Heatmap | 🟡 Medium | ✅ Done |
-| 12 | Price vs Quantity Scatter | 🟡 Medium | ⬜ Next |
-| 13 | Multi-panel Dashboard Figure | 🟡 Medium | ⬜ |
+| 12 | Price vs Quantity Scatter | 🟡 Medium | ✅ Done |
+| 13 | Multi-panel Dashboard Figure | 🟡 Medium | ✅ Done |
 
 ### Phase 3 — SQL
 | # | Project | Difficulty | Status |
 |---|---------|------------|--------|
-| 14 | Setup + Load Data to PostgreSQL | 🟢 Easy | ⬜ |
+| 14 | Setup + Load Data to PostgreSQL | 🟢 Easy | ✅ Done |
 | 15 | Basic Aggregation Queries | 🟢 Easy | ⬜ |
 | 16 | Running Total with Window Function | 🟡 Medium | ⬜ |
 | 17 | Product Ranking Query | 🟡 Medium | ⬜ |
@@ -56,13 +56,12 @@
 - **pandas** — data manipulation & analysis
 - **matplotlib / seaborn** — visualization
 - **openpyxl** — Excel report generation
-- **PostgreSQL 16** — coming in Phase 3
+- **sqlalchemy / psycopg2** — PostgreSQL connection
+- **PostgreSQL 16** — Phase 3 onwards
 
 ---
 
 ## 📁 Structure
-
-```
 data-analyst-playbook/
 ├── phase1_python_basics/
 │   ├── section1_sales_summary/
@@ -76,21 +75,29 @@ data-analyst-playbook/
 ├── phase2_visualization/
 │   ├── section9_revenue_trend/
 │   ├── section10_CategoryBar_Chart/
-│   └── section11_sales_heatmap/
+│   ├── section11_sales_heatmap/
+│   ├── section12_price_qty_scatter/
+│   └── section13_dashboard/
+├── phase3_sql/
+│   └── section14_postgresql_setup/
+│       ├── data/           # .gitignored
+│       ├── sql/
+│       └── load_to_postgres.py
 ├── charts/
 ├── reports/
-├── data/               # .gitignored
+├── .gitignore
 └── README.md
-```
-
 ---
 
 ## ⚙️ How to Run
 
 ```bash
 # Install dependencies
-pip install pandas matplotlib seaborn openpyxl
+pip install pandas matplotlib seaborn openpyxl sqlalchemy psycopg2-binary
 
 # Run any project
 python phase1_python_basics/section1_sales_summary/analysis.py
+
+# Load data to PostgreSQL (Phase 3)
+python phase3_sql/section14_postgresql_setup/load_to_postgres.py
 ```
