@@ -1,13 +1,20 @@
 # 📊 Data Analyst Playbook
 
-> 30 Python × SQL projects for building real-world data analyst skills.  
-> Stack: Python · pandas · matplotlib · seaborn · PostgreSQL
+> A collection of 30 Python × SQL projects designed to build real-world data analyst skills.  
+> Tech stack: Python · pandas · matplotlib · seaborn · PostgreSQL
+
+---
+
+## 🎯 Objective
+
+This playbook is designed to simulate real-world data analyst workflows,
+covering data cleaning, analysis, visualization, and database integration.
 
 ---
 
 ## 🚀 Progress
 
-### Phase 1 — Python Basics
+### Phase 1 — Python Fundamentals
 | # | Project | Difficulty | Status |
 |---|---------|------------|--------|
 | 1 | Sales Summary Script | 🟢 Easy | ✅ Done |
@@ -19,49 +26,58 @@
 | 7 | Duplicate Order Detector | 🟢 Easy | ✅ Done |
 | 8 | Automated Report Generator | 🟡 Medium | ✅ Done |
 
-### Phase 2 — Visualization
+---
+
+### Phase 2 — Data Visualization
 | # | Project | Difficulty | Status |
 |---|---------|------------|--------|
-| 9 | Revenue Trend Line Chart | 🟢 Easy | ✅ Done |
-| 10 | Category Bar Chart | 🟢 Easy | ✅ Done |
+| 9 | Revenue Trend (Line Chart) | 🟢 Easy | ✅ Done |
+| 10 | Category Distribution (Bar Chart) | 🟢 Easy | ✅ Done |
 | 11 | Sales Heatmap | 🟡 Medium | ✅ Done |
-| 12 | Price vs Quantity Scatter | 🟡 Medium | ✅ Done |
-| 13 | Multi-panel Dashboard Figure | 🟡 Medium | ✅ Done |
+| 12 | Price vs Quantity (Scatter Plot) | 🟡 Medium | ✅ Done |
+| 13 | Multi-panel Dashboard | 🟡 Medium | ✅ Done |
+
+---
 
 ### Phase 3 — SQL
 | # | Project | Difficulty | Status |
 |---|---------|------------|--------|
-| 14 | Setup + Load Data to PostgreSQL | 🟢 Easy | ✅ Done |
-| 15 | Basic Aggregation Queries | 🟢 Easy | ⬜ |
-| 16 | Running Total with Window Function | 🟡 Medium | ⬜ |
-| 17 | Product Ranking Query | 🟡 Medium | ⬜ |
-| 18 | MoM Growth Query | 🟡 Medium | ⬜ |
-| 19 | Cohort Analysis in SQL | 🔴 Hard | ⬜ |
-
-### Phase 4 — Python + SQL Combined
-| # | Project | Difficulty | Status |
-|---|---------|------------|--------|
-| 20–24 | Python + SQL Projects | 🟡–🔴 | ⬜ |
-
-### Phase 5 — Portfolio
-| # | Project | Difficulty | Status |
-|---|---------|------------|--------|
-| 25–30 | Portfolio Projects | 🔴 Hard | ⬜ |
+| 14 | PostgreSQL Setup & Data Loading | 🟢 Easy | ✅ Done |
+| 15 | Basic Aggregation Queries | 🟢 Easy | ⬜ Pending |
+| 16 | Running Total (Window Functions) | 🟡 Medium | ⬜ Pending |
+| 17 | Product Ranking | 🟡 Medium | ⬜ Pending |
+| 18 | Month-over-Month Growth (MoM) | 🟡 Medium | ⬜ Pending |
+| 19 | Cohort Analysis | 🔴 Hard | ⬜ Pending |
 
 ---
 
-## 🛠️ Stack
-
-- **Python** 3.x
-- **pandas** — data manipulation & analysis
-- **matplotlib / seaborn** — visualization
-- **openpyxl** — Excel report generation
-- **sqlalchemy / psycopg2** — PostgreSQL connection
-- **PostgreSQL 16** — Phase 3 onwards
+### Phase 4 — Python + SQL Integration
+| # | Project | Difficulty | Status |
+|---|---------|------------|--------|
+| 20–24 | End-to-End Python + SQL Projects | 🟡–🔴 | ⬜ Pending |
 
 ---
 
-## 📁 Structure
+### Phase 5 — Portfolio Projects
+| # | Project | Difficulty | Status |
+|---|---------|------------|--------|
+| 25–30 | Portfolio-ready Case Studies | 🔴 Hard | ⬜ Pending |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python 3.x**
+- **pandas** — data manipulation & analysis  
+- **matplotlib / seaborn** — data visualization  
+- **openpyxl** — Excel report generation  
+- **sqlalchemy / psycopg2** — PostgreSQL integration  
+- **PostgreSQL 16** — used from Phase 3 onward  
+
+---
+
+## 📁 Project Structure
+
 data-analyst-playbook/
 ├── phase1_python_basics/
 │   ├── section1_sales_summary/
@@ -71,33 +87,36 @@ data-analyst-playbook/
 │   ├── section5_price_distribution/
 │   ├── section6_csv_merger/
 │   ├── section7_duplicate_detector/
-│   └── section8_ExcelWriter_openpyxl/
+│   └── section8_excel_writer/
+│
 ├── phase2_visualization/
 │   ├── section9_revenue_trend/
-│   ├── section10_CategoryBar_Chart/
+│   ├── section10_category_bar_chart/
 │   ├── section11_sales_heatmap/
 │   ├── section12_price_qty_scatter/
 │   └── section13_dashboard/
+│
 ├── phase3_sql/
 │   └── section14_postgresql_setup/
-│       ├── data/           # .gitignored
+│       ├── data/        # ignored via .gitignore
 │       ├── sql/
 │       └── load_to_postgres.py
+│
 ├── charts/
 ├── reports/
 ├── .gitignore
 └── README.md
+
 ---
 
 ## ⚙️ How to Run
 
 ```bash
-# Install dependencies
+# install dependencies
 pip install pandas matplotlib seaborn openpyxl sqlalchemy psycopg2-binary
 
-# Run any project
+# run a project
 python phase1_python_basics/section1_sales_summary/analysis.py
 
-# Load data to PostgreSQL (Phase 3)
+# load data into PostgreSQL (Phase 3)
 python phase3_sql/section14_postgresql_setup/load_to_postgres.py
-```
