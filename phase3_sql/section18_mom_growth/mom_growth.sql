@@ -17,8 +17,8 @@ calc AS (
 
 SELECT 
     TO_CHAR(month, 'YYYY-MM') AS month,
-    revenue,
-    prev_revenue,
+    ROUND(revenue::numeric,2) AS revenue,
+    ROUND(prev_revenue::numeric,2) AS prev_revenue,
 
     ROUND(
         ((revenue - prev_revenue) * 100.0 / prev_revenue)::numeric,
