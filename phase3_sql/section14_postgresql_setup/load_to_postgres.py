@@ -4,7 +4,7 @@ import os
 from sqlalchemy import create_engine
 
 # CONFIG
-INPUT_PATTERN = "phase3_sql/section14_postgresql_setup/data/*.csv"
+INPUT_PATTERN = "phase3_sql/data/*.csv"
 
 # connect to database
 engine = create_engine("postgresql://qdull:@localhost:5432/ecommerce_db")

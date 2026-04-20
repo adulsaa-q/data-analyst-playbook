@@ -1,1 +1,1 @@
-SELECT * FROM shopee_orders_thailand LIMIT 2;
+SELECT * FROM shopee_orders_thailand;
