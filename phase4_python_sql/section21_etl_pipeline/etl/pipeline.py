@@ -49,7 +49,7 @@ def transform(df, report_date):
 
     # keep only required columns (remove noise)
     return df[
-        ["report_date","platform","ad_name","ad_type",
+        ["report_date","platform","ad_type",
         "clicks","orders","ad_spend","revenue"]
     ]
 
