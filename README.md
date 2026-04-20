@@ -7,11 +7,11 @@ Stack: Python · pandas · matplotlib · seaborn · PostgreSQL
 
 ## Why I built this
 
-I got tired of tutorials that stop at "here's how groupby works" and never show you what to actually do with it.
+I built this because most tutorials stop at explaining individual tools, but don’t show how to actually use them together.
 
-So I made this — a set of small projects that each solve one real problem. Cleaning messy data, writing SQL that doesn't fall apart, building charts that make sense, connecting everything into a pipeline. The kind of stuff that comes up in actual analyst work.
+So I put together a set of small projects, each focused on solving a practical problem  cleaning messy data, writing reliable SQL, building clear visualizations, and connecting everything into a simple pipeline.
 
-Nothing here is perfect. Some things I figured out the hard way. But that's kind of the point.
+Nothing here is perfect. A lot of it came from trial and error, which is kind of the point.
 
 ---
 
