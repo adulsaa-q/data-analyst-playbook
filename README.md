@@ -1,160 +1,120 @@
-# 📊 Data Analyst Playbook
+# Data Analyst Playbook
 
-> 30 Python × SQL projects — focused on building real-world data analyst skills  
-> Stack: Python · pandas · matplotlib · seaborn · PostgreSQL
+30 Python + SQL projects I built to practice data analyst workflows from scratch.  
+Stack: Python · pandas · matplotlib · seaborn · PostgreSQL
 
 ---
 
 ## Why I built this
 
-I wanted something more structured than random tutorials.
+I got tired of tutorials that stop at "here's how groupby works" and never show you what to actually do with it.
 
-At some point, just “knowing pandas” isn’t enough — you need to be able to work with data end-to-end: clean it, analyze it, visualize it, and query it properly with SQL.
+So I made this — a set of small projects that each solve one real problem. Cleaning messy data, writing SQL that doesn't fall apart, building charts that make sense, connecting everything into a pipeline. The kind of stuff that comes up in actual analyst work.
 
-Most learning resources use small, clean datasets. That’s not how real data looks.  
-So I built this playbook to practice workflows that are closer to actual work — a bit messy, a bit repetitive, but useful.
-
-Each project is small enough to finish in one sitting, but focused on something you’ll actually use on the job.
+Nothing here is perfect. Some things I figured out the hard way. But that's kind of the point.
 
 ---
 
-## Progress
+## Projects
 
-### Phase 1 — Python Fundamentals
+### Phase 1 — Python Basics
 
-Getting comfortable with pandas and building small but complete analysis scripts.
-
-| # | Project | What it does & why it matters |
-|---|---------|-------------------------------|
-| 1 | Sales Summary Script | Basic grouping + aggregation from a CSV. Simple, but something you’ll do constantly. Focus was writing clean scripts, not one-off notebook code. |
-| 2 | Data Cleaning Script | Real data is messy. Covers null handling, deduplication, type fixes, and column cleanup. Built as a reusable script. |
-| 3 | Date-based Sales Analysis | Breaks revenue down by time (month/week). Helps understand trends instead of just totals. |
-| 4 | Top Product Report | Ranks products and calculates contribution %. Foundation for Pareto-style analysis. |
-| 5 | Price Distribution Analysis | Uses descriptive stats + IQR to understand how values are distributed, not just averages. |
-| 6 | CSV Merger | Combines multiple files with basic validation. Saves manual work when dealing with recurring data. |
-| 7 | Duplicate Order Detector | Finds both exact and “soft” duplicates. Useful for catching data issues early. |
-| 8 | Automated Report Generator | Outputs a formatted Excel report. Goal: one script → ready-to-use output. |
+| # | Project | What I built |
+|---|---------|--------------|
+| 1 | Sales Summary Script | Load CSV, group by product, sum revenue. Simple, but writing it as a proper script (not a notebook) was the point. |
+| 2 | Data Cleaning Script | Null handling, duplicates, type fixes. Wrote it as a reusable script so I could run it on any messy file. |
+| 3 | Date-based Sales Analysis | Broke revenue down by month and week. Found out which periods actually performed well vs which just looked fine. |
+| 4 | Top Product Report | Ranked products and calculated % contribution. Basically a Pareto analysis — 20% of products usually drive most of the revenue. |
+| 5 | Price Distribution Analysis | Descriptive stats + IQR outlier detection. Learned pretty quickly that averages alone are misleading in e-commerce data. |
+| 6 | CSV Merger | Automated combining multiple monthly files with column validation. Saves a lot of manual copy-paste work. |
+| 7 | Duplicate Order Detector | Catches both exact duplicates and "soft" ones — same customer, same product, ordered within a day. Exports a flagged report. |
+| 8 | Automated Report Generator | Outputs a multi-sheet Excel file with formatted headers. Run it once, get a clean report. |
 
 ---
 
-### Phase 2 — Data Visualization
+### Phase 2 — Visualization
 
-Turning raw numbers into something readable.
-
-| # | Project | What it does & why it matters |
-|---|---------|-------------------------------|
-| 9 | Revenue Trend (Line Chart) | Plots revenue over time with simple annotations. Helps make trends obvious. |
-| 10 | Category Distribution (Bar Chart) | Clean bar chart with labels. Focus on readability, not just plotting. |
-| 11 | Sales Heatmap | Shows patterns across days/weeks. Useful for spotting consistent behavior. |
-| 12 | Price vs Quantity (Scatter Plot) | Explores relationship between variables. Adds basic correlation insight. |
-| 13 | Multi-panel Dashboard | Combines multiple charts into one view. Simulates a quick business summary. |
+| # | Project | What I built |
+|---|---------|--------------|
+| 9 | Revenue Trend | Monthly revenue line chart with annotations on the best and worst month. |
+| 10 | Category Bar Chart | Top 10 products as a horizontal bar chart with gradient colors and value labels. |
+| 11 | Sales Heatmap | Revenue by day of week × week number. Good for spotting which days consistently do better. |
+| 12 | Price vs Quantity Scatter | Scatter plot per product with a trend line and correlation in the title. |
+| 13 | Multi-panel Dashboard | Four charts in one figure — revenue trend, top products, monthly bars, and a histogram. |
 
 ---
 
 ### Phase 3 — SQL
 
-Moving from pandas to querying real data in PostgreSQL.
-
-| # | Project | What it does & why it matters |
-|---|---------|-------------------------------|
-| 14 | PostgreSQL Setup & Data Loading | Sets up database + loads Shopee data using Python. Foundation for SQL work. |
-| 15 | Basic Aggregation Queries | GROUP BY, HAVING, ORDER BY — core queries used in almost every task. |
-| 16 | Running Total (Window Functions) | Uses SUM() OVER to calculate cumulative values without collapsing rows. |
-| 17 | Product Ranking | Compares RANK, DENSE_RANK, ROW_NUMBER. Helps understand differences clearly. |
-| 18 | Month-over-Month Growth | Uses LAG() to calculate growth and label trends (UP / DOWN / FLAT). |
-| 19 | Cohort Analysis | Tracks customer retention by cohort. One of the more complex SQL tasks. |
+| # | Project | What I built |
+|---|---------|--------------|
+| 14 | PostgreSQL Setup | Loaded 11 Shopee Thailand tables into a local PostgreSQL database using Python. |
+| 15 | Aggregation Queries | GROUP BY, HAVING, ORDER BY against real data. Revenue by product, monthly counts, average quantities. |
+| 16 | Running Total | SUM() OVER to calculate cumulative revenue without collapsing rows. |
+| 17 | Product Ranking | Compared RANK, DENSE_RANK, and ROW_NUMBER side by side. They behave differently with ties. |
+| 18 | Month-over-Month Growth | LAG() to pull last month's revenue and calculate growth %. Added a trend label (UP / DOWN / FLAT). |
+| 19 | Cohort Analysis | Grouped customers by first purchase month, tracked how many came back each month after. One of the harder SQL problems I've worked through. |
 
 ---
 
-### Phase 4 — Python + SQL Integration
+### Phase 4 — Python + SQL Together
 
-Combining both tools into simple workflows.
-
-| # | Project | What it does & why it matters |
-|---|---------|-------------------------------|
-| 20 | Python Reads from PostgreSQL | Runs SQL from Python and loads into pandas. Connects both worlds. |
-| 21 | ETL Pipeline Script | Basic Extract → Transform → Load flow. Handles multiple files and logging. |
-| 22 | Data Quality Checker | Checks nulls, duplicates, negatives, date range, and outliers. Simple but very useful. |
-| 23 | Repeat Purchase Analysis | ⬜ Pending |
-| 24 | A/B Test Analysis | ⬜ Pending |
+| # | Project | What I built |
+|---|---------|--------------|
+| 20 | Python Reads from PostgreSQL | Connected Python to PostgreSQL with SQLAlchemy, ran a query, got a DataFrame back. |
+| 21 | ETL Pipeline | Extract → Transform → Load across multiple files. Handles duplicates and logs each step. |
+| 22 | Data Quality Checker | Runs 5 checks on any DataFrame: nulls, duplicates, negative values, date range, outliers. Found that 97.85% of order items have no campaign ID — that came from real Shopee data. |
+| 23 | Repeat Purchase Analysis | ⬜ Coming soon |
+| 24 | A/B Test Analysis | ⬜ Coming soon |
 
 ---
 
 ### Phase 5 — Portfolio Projects
 
-End-to-end projects combining everything.
-
-| # | Project | What it does & why it matters |
-|---|---------|-------------------------------|
-| 25 | Customer Cohort Retention Heatmap | ⬜ Pending |
-| 26 | RFM Customer Segmentation | ⬜ Pending |
-| 27 | Sales Forecasting (Moving Average) | ⬜ Pending |
-| 28 | Marketing Attribution Report | ⬜ Pending |
-| 29 | Inventory Restock Alert System | ⬜ Pending |
-| 30 | End-to-end Pipeline + GitHub Publish | ⬜ Pending |
+| # | Project | Status |
+|---|---------|--------|
+| 25 | Customer Cohort Retention Heatmap | ⬜ Coming soon |
+| 26 | RFM Customer Segmentation | ⬜ Coming soon |
+| 27 | Sales Forecasting (Moving Average) | ⬜ Coming soon |
+| 28 | Marketing Attribution Report | ⬜ Coming soon |
+| 29 | Inventory Restock Alert System | ⬜ Coming soon |
+| 30 | End-to-end Pipeline + GitHub Publish | ⬜ Coming soon |
 
 ---
 
-## Tech Stack
+## Stack
 
-- Python 3.x  
-- pandas — data manipulation  
-- matplotlib / seaborn — visualization  
-- openpyxl — Excel reports  
-- sqlalchemy / psycopg2 — database connection  
-- PostgreSQL — database
+- Python 3.x
+- pandas, matplotlib, seaborn, openpyxl
+- SQLAlchemy + psycopg2
+- PostgreSQL 16
 
 ---
 
-## Project Structure
-
-
-```
-data-analyst-playbook/
-├── phase1_python_basics/
-│   ├── section1_sales_summary/
-│   ├── section2_data_cleaning/
-│   ├── section3_date_analysis/
-│   ├── section4_top_product/
-│   ├── section5_price_distribution/
-│   ├── section6_csv_merger/
-│   ├── section7_duplicate_detector/
-│   └── section8_excel_writer/
-├── phase2_visualization/
-│   ├── section9_revenue_trend/
-│   ├── section10_category_bar_chart/
-│   ├── section11_sales_heatmap/
-│   ├── section12_price_qty_scatter/
-│   └── section13_dashboard/
-├── phase3_sql/
-│   ├── section14_postgresql_setup/
-│   ├── section15_aggregation/
-│   ├── section16_running_total/
-│   ├── section17_product_ranking/
-│   ├── section18_mom_growth/
-│   └── section19_cohort_analysis/
-├── phase4_python_sql/
-│   ├── section20_python_reads_postgres/
-│   ├── section21_etl_pipeline/
-│   ├── section22_data_quality/
-│   └── ...
-├── charts/
-├── reports/
-├── .gitignore
-└── README.md
-```
-
----
-
-## How to Run
+## How to run
 
 ```bash
-# install dependencies
 pip install pandas matplotlib seaborn openpyxl sqlalchemy psycopg2-binary
 
 # run any project
 python3 phase1_python_basics/section1_sales_summary/analysis.py
 
-# load data into PostgreSQL (required for Phase 3+)
+# load data into PostgreSQL first (needed for Phase 3+)
 python3 phase3_sql/section14_postgresql_setup/load_to_postgres.py
+```
+
+---
+
+## Structure
+
+```
+data-analyst-playbook/
+├── phase1_python_basics/
+├── phase2_visualization/
+├── phase3_sql/
+├── phase4_python_sql/
+├── charts/
+├── reports/
+├── .gitignore
+└── README.md
 ```
