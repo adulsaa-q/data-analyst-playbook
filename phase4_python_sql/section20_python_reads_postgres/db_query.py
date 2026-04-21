@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 import pandas as pd
-from config import DB_URL
+from phase4_python_sql.section20_python_reads_postgres.config import DB_URL
 
 engine = create_engine(DB_URL)
 
